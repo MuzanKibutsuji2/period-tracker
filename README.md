@@ -12,6 +12,18 @@ npm run dev
 
 Then open http://localhost:5173
 
+## Deploy to GitHub Pages
+
+Every push to `main` auto-deploys via `.github/workflows/deploy.yml`.
+
+1. On GitHub, go to **Settings → Pages**
+2. Under **Build and deployment → Source**, select **GitHub Actions**
+3. Push to `main` (or merge the PR) — the site goes live at
+   `https://<your-username>.github.io/period-tracker/`
+
+No extra config needed: the workflow builds with `GITHUB_PAGES=true`,
+which sets Vite's `base` to `/period-tracker/` for correct asset paths.
+
 ## Features
 
 - **Dashboard** — cycle day ring, phase, estimated next period & fertile window (labelled estimates with honest confidence)
